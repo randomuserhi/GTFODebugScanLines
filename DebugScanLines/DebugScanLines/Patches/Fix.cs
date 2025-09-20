@@ -1,5 +1,4 @@
-﻿using API;
-using ChainedPuzzles;
+﻿using ChainedPuzzles;
 using HarmonyLib;
 using UnityEngine;
 
@@ -44,7 +43,6 @@ namespace BioScannerFix {
                     if (diffDist < dist) {
                         lerp = diffDist / dist;
                     }
-                    APILogger.Warn($"lerp: {diffDist}");
 
                     Fig.DrawLine(points[i - 1].transform.position, points[i - 1].transform.position + diff * lerp, Color.white, 4);
 
