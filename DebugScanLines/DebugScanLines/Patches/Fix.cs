@@ -2,7 +2,7 @@
 using HarmonyLib;
 using UnityEngine;
 
-namespace BioScannerFix {
+namespace DebugScanLines {
     [HarmonyPatch]
     internal static class Fix {
         [HarmonyPatch(typeof(CP_Holopath_Spline), nameof(CP_Holopath_Spline.GeneratePath))]

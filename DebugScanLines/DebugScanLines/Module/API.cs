@@ -1,12 +1,12 @@
 ﻿using BepInEx.Logging;
-using BioScannerFix.BepInEx;
+using DebugScanLines.BepInEx;
 
-namespace BioScannerFix.BepInEx {
+namespace DebugScanLines.BepInEx {
     // REMEMBER TO SET THESE => otherwise program just wont work lmao
     public static class Module {
-        public const string GUID = "randomuserhi.BioScannerFix";
-        public const string Name = "BioScannerFix";
-        public const string Version = "0.0.1";
+        public const string GUID = "randomuserhi.AMDScanLineFix";
+        public const string Name = "AMDScanLineFix";
+        public const string Version = "0.0.2";
     }
 }
 
