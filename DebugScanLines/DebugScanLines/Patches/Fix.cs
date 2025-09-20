@@ -1,4 +1,5 @@
 ﻿using ChainedPuzzles;
+using DebugScanLines.BepInEx;
 using HarmonyLib;
 using UnityEngine;
 
@@ -44,7 +45,14 @@ namespace DebugScanLines {
                         lerp = diffDist / dist;
                     }
 
-                    Fig.DrawLine(points[i - 1].transform.position, points[i - 1].transform.position + diff * lerp, Color.white, 4);
+                    // Thickness is screenspace, this approximates distance scaling
+                    float distFromCamera = Mathf.Min(
+                        Vector3.Distance(Camera.main.transform.position, points[i].transform.position),
+                        Vector3.Distance(Camera.main.transform.position, points[i - 1].transform.position)
+                        );
+                    float scale = 1.0f / distFromCamera;
+
+                    Fig.DrawLine(points[i - 1].transform.position, points[i - 1].transform.position + diff * lerp, new Color(ConfigManager.R, ConfigManager.G, ConfigManager.B, ConfigManager.A), scale * ConfigManager.Thickness);
 
                     d += dist;
                 }
